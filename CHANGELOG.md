@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/fabiojmendes/workflow-playground/compare/v0.1.7...v0.1.8) (2026-10-23)
+
+
+### Bug Fixes
+
+* release workflow ([c7d9de0](https://github.com/fabiojmendes/workflow-playground/commit/c7d9de06c6c7769f2e463e021ca1fbcbb8e9148d))
+
 ## [0.1.6](https://github.com/fabiojmendes/workflow-playground/compare/v0.1.5...v0.1.6) (2026-10-23)
 
 
