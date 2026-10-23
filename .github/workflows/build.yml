@@ -6,9 +6,11 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "*" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "*" ]
+    branches: [ "master" ]
+  release:
+    types: ["published", "created", "released"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,7 +25,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -36,7 +38,7 @@ jobs:
           echo test, and deploy your project.
           
       - name: rust-cargo
-        uses: actions-rs/cargo@v1.0.1
+        uses: actions-rs/cargo@v1
         with:
           # Cargo command to run (ex. `check` or `build`)
           command: check
