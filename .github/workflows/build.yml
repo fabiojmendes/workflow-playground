@@ -36,9 +36,20 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          
-      - name: rust-cargo
-        uses: actions-rs/cargo@v1
+         
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
         with:
-          # Cargo command to run (ex. `check` or `build`)
-          command: check
+          components: clippy, rustfmt
+
+      - name: Enable Rust caching
+        uses: Swatinem/rust-cache@v2
+
+      - name: Check formatting
+        run: cargo fmt --check
+
+      - name: Run Clippy lints
+        run: cargo clippy -- -D warnings
+
+      - name: Build project
+        run: cargo build --verbose
