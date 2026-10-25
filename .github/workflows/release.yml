@@ -1,4 +1,4 @@
-name: release
+name: Release
 
 on:
   push:
@@ -23,6 +23,11 @@ jobs:
         with:
           release-type: rust
 
+
+  test:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
+    uses: ./.github/workflows/test.yml
 
   build-push:
     needs: release-please
