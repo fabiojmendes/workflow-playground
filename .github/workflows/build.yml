@@ -30,24 +30,8 @@ jobs:
       - name: Build project
         run: cargo build --verbose
 
-  release-please:
-    if: github.event_name != 'pull_request'
-    needs: check
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-      pull-requests: write
-
-    steps:
-      - uses: googleapis/release-please-action@v5
-        id: release
-        with:
-          release-type: rust
-
-
   build-push:
-    needs: release-please
+    needs: check
     runs-on: ubuntu-latest
 
     permissions:
@@ -65,11 +49,6 @@ jobs:
         uses: docker/metadata-action@v6
         with:
           images: ghcr.io/${{ github.repository }}
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=semver,pattern=latest
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
