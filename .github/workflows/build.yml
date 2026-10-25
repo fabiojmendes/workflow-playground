@@ -31,6 +31,7 @@ jobs:
         run: cargo build --verbose
 
   release-please:
+    if: github.event_name != 'pull_request'
     needs: check
     runs-on: ubuntu-latest
 
