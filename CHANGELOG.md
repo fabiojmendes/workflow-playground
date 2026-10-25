@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/fabiojmendes/workflow-playground/compare/v0.2.1...v0.2.2) (2026-10-25)
+
+
+### Bug Fixes
+
+* fix release tagging ([#7](https://github.com/fabiojmendes/workflow-playground/issues/7)) ([48088ff](https://github.com/fabiojmendes/workflow-playground/commit/48088ffad9df23bd20c5a3d4e27850369083e140))
+
 ## [0.2.1](https://github.com/fabiojmendes/workflow-playground/compare/v0.2.0...v0.2.1) (2026-10-25)
 
 
