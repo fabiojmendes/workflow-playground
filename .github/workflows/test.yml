@@ -2,6 +2,12 @@ name: Test
 
 on:
   workflow_call:
+    inputs:
+      ref:
+        description: "Ref used for this action"
+        required: false
+        type: string
+        default: "github.ref"
 
 jobs:
   check:
@@ -9,6 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref }}
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
