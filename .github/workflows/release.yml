@@ -1,4 +1,4 @@
-name: release
+name: Release
 
 on:
   push:
@@ -24,8 +24,13 @@ jobs:
           release-type: rust
 
 
-  build-push:
+  test:
     needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
+    uses: ./.github/workflows/test.yml
+
+  build-push:
+    needs: test
     if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
 

@@ -1,4 +1,4 @@
-name: build
+name: Build
 
 on:
   push:
@@ -6,31 +6,11 @@ on:
       - "release-please-**"
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v7
-
-      - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          components: clippy, rustfmt
-
-      - name: Enable Rust caching
-        uses: Swatinem/rust-cache@v2
-
-      - name: Check formatting
-        run: cargo fmt --check
-
-      - name: Run Clippy lints
-        run: cargo clippy -- -D warnings
-
-      - name: Build project
-        run: cargo build --verbose
+  test:
+    uses: ./.github/workflows/test.yml
 
   build-push:
-    needs: check
+    needs: test
     runs-on: ubuntu-latest
 
     permissions:
