@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/fabiojmendes/workflow-playground/compare/v0.2.0...v0.2.1) (2026-10-25)
+
+
+### Bug Fixes
+
+* fix release tagging ([#4](https://github.com/fabiojmendes/workflow-playground/issues/4)) ([cf7131d](https://github.com/fabiojmendes/workflow-playground/commit/cf7131d9d81f3754a28d28b7a2cf690315e0f2d5))
+* test docker workflow ([#6](https://github.com/fabiojmendes/workflow-playground/issues/6)) ([8185d15](https://github.com/fabiojmendes/workflow-playground/commit/8185d159614c92db423f77e1ea55343e369ccd69))
+
 ## [0.2.0](https://github.com/fabiojmendes/workflow-playground/compare/v0.1.6...v0.2.0) (2026-10-25)
 
 
