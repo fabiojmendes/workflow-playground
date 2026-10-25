@@ -47,7 +47,7 @@ jobs:
 
 
   build-push:
-    needs: check
+    needs: release-please
     runs-on: ubuntu-latest
 
     permissions:
