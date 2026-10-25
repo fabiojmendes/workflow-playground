@@ -30,7 +30,7 @@ jobs:
     uses: ./.github/workflows/test.yml
 
   build-push:
-    needs: release-please
+    needs: test
     if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
 

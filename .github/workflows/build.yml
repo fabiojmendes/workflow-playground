@@ -10,7 +10,7 @@ jobs:
     uses: ./.github/workflows/test.yml
 
   build-push:
-    needs: check
+    needs: test
     runs-on: ubuntu-latest
 
     permissions:
